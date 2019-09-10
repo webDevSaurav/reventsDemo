@@ -44,7 +44,20 @@ export default class EventListItem extends Component {
         </Segment>
         <Segment clearing>
           <span>{description}</span>
-          <Button as='a' color='teal' floated='right' content='View' />
+          <Button
+            as='a'
+            color='teal'
+            floated='right'
+            content='View'
+            onClick={() => this.props.selectEvent(this.props.event)}
+          />
+          <Button
+            as='a'
+            color='red'
+            floated='right'
+            content='Delete'
+            onClick={() => this.props.deleteEvent(this.props.event)}
+          />
         </Segment>
       </Segment.Group>
     );
